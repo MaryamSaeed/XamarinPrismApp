@@ -19,16 +19,19 @@ namespace XamarinTask
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("MainPage/NavigationPage");
+            await NavigationService.NavigateAsync("MainPage/NavigationPage/Articles");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
-
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<Articles, ArticlesViewModel>();
+            containerRegistry.RegisterForNavigation<Articles, ArticlesPageViewModel>();
+            containerRegistry.RegisterForNavigation<LiveChatPage, LiveChatPageViewModel>();
+            containerRegistry.RegisterForNavigation<OnlineNewsPage, OnlineNewsPageViewModel>();
+            containerRegistry.RegisterForNavigation<WishListPage, WishListPageViewModel>();
+            containerRegistry.RegisterForNavigation<GalleryPage, GalleryPageViewModel>();
         }
     }
 }

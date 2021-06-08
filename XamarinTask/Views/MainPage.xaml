@@ -5,39 +5,42 @@
                   x:Class="XamarinTask.Views.MainPage"
                 Title="{Binding Title}">
 
+    <MasterDetailPage.BackgroundColor>
+        Black
+    </MasterDetailPage.BackgroundColor>
     <MasterDetailPage.Master>
         <ContentPage Title="Menu"
             Padding="0,20,0,0"
             IconImageSource="{OnPlatform iOS='hamburger.png'}" BackgroundColor="White">
             <Grid HorizontalOptions="Center" VerticalOptions="CenterAndExpand" BackgroundColor="White">
                 <Grid.RowDefinitions>
-                 <RowDefinition Height="*"/>
-                 <RowDefinition Height="*"/>
-                 <RowDefinition Height="*"/>
-                  <RowDefinition Height="*"/>
-                  <RowDefinition Height="*"/>
-                  <RowDefinition Height="*"/>
-                  <RowDefinition Height="*"/>
-                  <RowDefinition Height="*"/>
-                  <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="*"/>
-                  <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Frame Margin="10" BorderColor="White"  CornerRadius="50" HeightRequest="60"  WidthRequest="60"
                 IsClippedToBounds="True"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
-                <Image Source="profile.png" Aspect="AspectFill"  Margin="-20"  HeightRequest="80" WidthRequest="80" />
+                    <Image Source="profile.png" Aspect="AspectFill"  Margin="-20"  HeightRequest="80" WidthRequest="80" />
                 </Frame>
                 <Label Text="Welcome" FontSize="Small" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="End"/>
                 <Label Text="Tony Roshdy" FontSize="Large" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Start" TextColor="Black"/>
-                <Button ImageSource="explore.png" Text="Articles" BackgroundColor="White" Grid.Row="2"  Grid.ColumnSpan="2"/>
-                <Button ImageSource="live.png" Text="Live Chat" BackgroundColor="White" Grid.Row="3"  Grid.ColumnSpan="2"/>
-                <Button ImageSource="gallery.png" Text="Gallery" BackgroundColor="White" Grid.Row="4"  Grid.ColumnSpan="2"/>
-                <Button ImageSource="wishlist.png" Text="Wish List" BackgroundColor="White" Grid.Row="5"  Grid.ColumnSpan="2"/>
-                <Button ImageSource="onlineNews.png" Text="Explore Online News" BackgroundColor="White" Grid.Row="6"  Grid.ColumnSpan="2"/>
+                <Button ImageSource="explore.png" Text="Articles" BackgroundColor="White" Grid.Row="2"  Grid.ColumnSpan="2" Command="{Binding NavigateToPage}" CommandParameter="Articles"/>
+                <Button ImageSource="live.png" Text="Live Chat" BackgroundColor="White" Grid.Row="3"  Grid.ColumnSpan="2" Command="{Binding NavigateToPage}" CommandParameter="LiveChatPage"/>
+                <Button ImageSource="gallery.png" Text="Gallery" BackgroundColor="White" Grid.Row="4"  Grid.ColumnSpan="2" Command="{Binding NavigateToPage}" CommandParameter="GalleryPage"/>
+                <Button ImageSource="wishlist.png" Text="Wish List" BackgroundColor="White" Grid.Row="5"  Grid.ColumnSpan="2" Command="{Binding NavigateToPage}" CommandParameter="WishListPage"/>
+                <Button ImageSource="onlineNews.png"  Text="Explore Online News"  BackgroundColor="White" Grid.Row="6"  Grid.ColumnSpan="2" Command="{Binding NavigateToPage}" CommandParameter="OnlineNewsPage"/>
             </Grid>
         </ContentPage>
     </MasterDetailPage.Master>
