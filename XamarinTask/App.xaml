@@ -6,6 +6,7 @@
   <Application.Resources>
 
     <!-- Application resource dictionary -->
-
+        <Color x:Key="BackgroundColor" >white</Color>
+        <Color x:Key="NameTextColor" >Black</Color>
   </Application.Resources>
 </prism:PrismApplication>

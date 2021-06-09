@@ -18,7 +18,6 @@ namespace XamarinTask
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
             await NavigationService.NavigateAsync("MainPage/NavigationPage/Articles");
         }
 
@@ -31,7 +30,7 @@ namespace XamarinTask
             containerRegistry.RegisterForNavigation<LiveChatPage, LiveChatPageViewModel>();
             containerRegistry.RegisterForNavigation<OnlineNewsPage, OnlineNewsPageViewModel>();
             containerRegistry.RegisterForNavigation<WishListPage, WishListPageViewModel>();
-            containerRegistry.RegisterForNavigation<GalleryPage, GalleryPageViewModel>();
+            containerRegistry.RegisterForNavigation<GalleryNavigationPage, GalleryNavigationPageViewModel>();
         }
     }
 }
