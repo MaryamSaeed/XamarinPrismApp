@@ -25,5 +25,6 @@
             <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
             <Setter Property="TextColor" Value="{StaticResource NameTextColor}" />
         </Style>
+        
     </Application.Resources>
 </prism:PrismApplication>

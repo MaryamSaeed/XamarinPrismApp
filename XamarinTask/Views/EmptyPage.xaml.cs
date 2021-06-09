@@ -2,9 +2,9 @@
 
 namespace XamarinTask.Views
 {
-    public partial class WishListPage : ContentPage
+    public partial class EmptyPage : ContentPage
     {
-        public WishListPage()
+        public EmptyPage()
         {
             InitializeComponent();
         }

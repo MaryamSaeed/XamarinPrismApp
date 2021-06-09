@@ -16,7 +16,7 @@ namespace XamarinTask.ViewModels
         }
         public ArticlesPageViewModel()
         {
-            Title = "Articles";
+            Title = "Articles".ToUpper();
         }
     }
 }

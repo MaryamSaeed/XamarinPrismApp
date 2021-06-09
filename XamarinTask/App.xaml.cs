@@ -27,10 +27,7 @@ namespace XamarinTask
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<Articles, ArticlesPageViewModel>();
-            containerRegistry.RegisterForNavigation<LiveChatPage, LiveChatPageViewModel>();
-            containerRegistry.RegisterForNavigation<OnlineNewsPage, OnlineNewsPageViewModel>();
-            containerRegistry.RegisterForNavigation<WishListPage, WishListPageViewModel>();
-            containerRegistry.RegisterForNavigation<GalleryNavigationPage, GalleryNavigationPageViewModel>();
+            containerRegistry.RegisterForNavigation<EmptyPage, EmptyPageViewModel>();
         }
     }
 }

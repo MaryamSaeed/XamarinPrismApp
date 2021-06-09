@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XamarinTask.Views.EmptyPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name ="Search Icon" IconImageSource="search.png"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Label Text="{Binding ScreenMessage}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+            TextColor="{StaticResource DimmedTextColor}" FontSize="Title"/>
+    </StackLayout>
+</ContentPage>

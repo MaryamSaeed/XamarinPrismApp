@@ -2,7 +2,7 @@
 
 namespace XamarinTask.Views
 {
-    public partial class Articles : NavigationPage
+    public partial class Articles : ContentPage
     {
         public Articles()
         {
