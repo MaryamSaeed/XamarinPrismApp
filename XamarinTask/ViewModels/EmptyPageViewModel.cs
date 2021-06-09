@@ -32,6 +32,11 @@ namespace XamarinTask.ViewModels
         public  void OnNavigatedTo(INavigationParameters parameters)
         {
             Title = parameters.GetValue<string>("title").ToUpper();
+            var status = parameters.GetValue<bool>("status");
+            if (status)
+                ScreenMessage = Constants.NoService;
+            else
+                ScreenMessage = Constants.NoItems;
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)
