@@ -40,7 +40,10 @@ namespace XamarinTask.ViewModels
         }
         private void OnItemSelectedChanged()
         {
-            navigationService.NavigateAsync("ArticleDetailPage");
+            var parameters = new NavigationParameters {
+                { Constants.selectedArticle,SelectdArticle}
+            };
+            navigationService.NavigateAsync("ArticleDetailPage",parameters);
         }
         public void OnNavigatedFrom(INavigationParameters parameters)
         {

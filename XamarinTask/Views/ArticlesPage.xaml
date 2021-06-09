@@ -14,11 +14,16 @@
         SelectionChangedCommand="{Binding ItemSelectedChanged}" >
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <StackLayout>
-                    <Frame>
-                        <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}"/>
+                <RelativeLayout  >
+                    <StackLayout HorizontalOptions="Center" BackgroundColor="{StaticResource BackgroundColor}" Margin="10,10,10,10" Padding="10">
+                    <Frame Padding="0" VerticalOptions="StartAndExpand">
+                        <Image Source="{Binding urlToImage}" Aspect="AspectFit"/>
                     </Frame>
-                </StackLayout>
+                        <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}"/>
+                        <Label Text="{Binding author}" FontSize="Medium" />
+                        <Label Text="{Binding publishedAt}" FontSize="Small" HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                </RelativeLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
