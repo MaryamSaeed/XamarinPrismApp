@@ -28,7 +28,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Frame Margin="10" BorderColor="White"  CornerRadius="50" HeightRequest="60"  WidthRequest="60"
+                <Frame Margin="10" BorderColor="{StaticResource BackgroundColor}"  CornerRadius="50" HeightRequest="60"  WidthRequest="60"
                 IsClippedToBounds="True"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">

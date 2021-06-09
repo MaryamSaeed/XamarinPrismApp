@@ -8,5 +8,13 @@
     <!-- Application resource dictionary -->
         <Color x:Key="BackgroundColor" >white</Color>
         <Color x:Key="NameTextColor" >Black</Color>
-  </Application.Resources>
+        <Color x:Key="NavigationBarColor" >Black</Color>
+      
+        <Style TargetType="{x:Type NavigationPage}">
+            <Setter Property="BarBackgroundColor"
+                    Value="{StaticResource NavigationBarColor}" />
+            <Setter Property="BarTextColor"
+                    Value="{StaticResource BackgroundColor}" />
+        </Style>
+    </Application.Resources>
 </prism:PrismApplication>
