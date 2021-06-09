@@ -8,4 +8,18 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Name ="Search Icon" IconImageSource="search.png"/>
     </ContentPage.ToolbarItems>
+    <CollectionView ItemsSource="{Binding Articles}" ItemsLayout="VerticalList" 
+        SelectionMode="Single" 
+        SelectedItem="{Binding SelectdArticle }"
+        SelectionChangedCommand="{Binding ItemSelectedChanged}" >
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout>
+                    <Frame>
+                        <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}"/>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>

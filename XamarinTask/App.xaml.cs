@@ -28,6 +28,7 @@ namespace XamarinTask
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<Articles, ArticlesPageViewModel>();
             containerRegistry.RegisterForNavigation<EmptyPage, EmptyPageViewModel>();
+            containerRegistry.RegisterForNavigation<ArticleDetailPage, ArticleDetaiPageViewModel>();
         }
     }
 }
