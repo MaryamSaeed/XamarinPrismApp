@@ -2,7 +2,7 @@
 
 namespace XamarinTask.Views
 {
-    public partial class GalleryNavigationPage : NavigationPage
+    public partial class GalleryNavigationPage : ContentPage
     {
         public GalleryNavigationPage()
         {

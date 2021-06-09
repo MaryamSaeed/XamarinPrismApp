@@ -2,7 +2,7 @@
 
 namespace XamarinTask.Views
 {
-    public partial class OnlineNewsPage : NavigationPage
+    public partial class OnlineNewsPage : ContentPage
     {
         public OnlineNewsPage()
         {

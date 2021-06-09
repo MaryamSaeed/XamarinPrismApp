@@ -2,7 +2,7 @@
 
 namespace XamarinTask.Views
 {
-    public partial class LiveChatPage : NavigationPage
+    public partial class LiveChatPage : ContentPage
     {
         public LiveChatPage()
         {

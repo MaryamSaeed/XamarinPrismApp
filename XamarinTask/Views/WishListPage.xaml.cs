@@ -2,7 +2,7 @@
 
 namespace XamarinTask.Views
 {
-    public partial class WishListPage : NavigationPage
+    public partial class WishListPage : ContentPage
     {
         public WishListPage()
         {
