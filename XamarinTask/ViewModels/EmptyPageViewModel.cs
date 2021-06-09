@@ -1,13 +1,9 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace XamarinTask.ViewModels
 {
-    public class EmptyPageViewModel : BindableBase,INavigationAware
+    public class EmptyPageViewModel : BindableBase, INavigationAware
     {
         //private
         private string title;
@@ -29,7 +25,7 @@ namespace XamarinTask.ViewModels
             Title = "Empty Page Title";
             navigationService = navigationservice;
         }
-        public  void OnNavigatedTo(INavigationParameters parameters)
+        public void OnNavigatedTo(INavigationParameters parameters)
         {
             Title = parameters.GetValue<string>("title").ToUpper();
             var status = parameters.GetValue<bool>("status");
@@ -41,7 +37,7 @@ namespace XamarinTask.ViewModels
 
         public void OnNavigatedFrom(INavigationParameters parameters)
         {
-            
+
         }
     }
 }

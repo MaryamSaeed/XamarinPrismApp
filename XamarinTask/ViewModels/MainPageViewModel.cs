@@ -1,15 +1,11 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace XamarinTask.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+        //command
         public DelegateCommand<string> NavigateToPage { get; }
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
@@ -17,9 +13,9 @@ namespace XamarinTask.ViewModels
             Title = "Main Page";
             NavigateToPage = new DelegateCommand<string>(OnNavigateToPage);
         }
-        private async void OnNavigateToPage(string pagename)
+        private async void OnNavigateToPage(string pagepath)
         {
-            await NavigationService.NavigateAsync($"NavigationPage/{pagename}");
+            await NavigationService.NavigateAsync($"NavigationPage/{pagepath}");
         }
     }
 }

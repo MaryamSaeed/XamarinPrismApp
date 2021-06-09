@@ -24,6 +24,7 @@
             <Setter Property="FontSize" Value="Medium" />
             <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
             <Setter Property="TextColor" Value="{StaticResource NameTextColor}" />
+            <Setter Property="TextTransform" Value="None" />
         </Style>
         
     </Application.Resources>
