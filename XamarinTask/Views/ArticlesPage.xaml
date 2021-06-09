@@ -21,7 +21,7 @@
                     </Frame>
                         <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}"/>
                         <Label Text="{Binding author}" FontSize="Medium" />
-                        <Label Text="{Binding publishedAt}" FontSize="Small" HorizontalTextAlignment="End"/>
+                        <Label Text="{Binding publishedAt,StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" HorizontalTextAlignment="End"/>
                     </StackLayout>
                 </RelativeLayout>
             </DataTemplate>
