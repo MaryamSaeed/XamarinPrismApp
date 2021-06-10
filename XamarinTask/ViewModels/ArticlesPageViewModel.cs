@@ -3,13 +3,9 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Prism.Services;
-using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net.Http;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
 using XamarinTask.WebService;
 
 namespace XamarinTask.ViewModels
@@ -47,7 +43,8 @@ namespace XamarinTask.ViewModels
         }
         /// <summary>
         /// when an item gets selected from the articles list
-        /// navigat to article detail page
+        /// pass selected article to navigation parameters
+        /// navigat to article details page 
         /// </summary>
         private void OnItemSelectedChanged()
         {
@@ -67,6 +64,7 @@ namespace XamarinTask.ViewModels
         }
         /// <summary>
         /// initiates the API calls and get its the articles list
+        /// if request failed desplay ana alert message
         /// </summary>
         private async void GetArticlesWebRequest()
         {

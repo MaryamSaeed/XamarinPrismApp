@@ -57,7 +57,7 @@ namespace XamarinTask.ViewModels
         /// <summary>
         /// displays the content of the article sent in the navigation parameter
         /// </summary>
-        /// <param name="parameters"></param>
+        /// <param name="parameters">naveration parametrs with the article</param>
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             var selectedarticle = parameters.GetValue<Article>(Constants.selectedArticle);

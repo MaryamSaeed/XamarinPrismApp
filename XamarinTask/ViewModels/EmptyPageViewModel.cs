@@ -20,11 +20,16 @@ namespace XamarinTask.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+        //ctor
         public EmptyPageViewModel(INavigationService navigationservice)
         {
             Title = "Empty Page Title";
             navigationService = navigationservice;
         }
+        /// <summary>
+        /// desplays a title and a screen message based on the navigation parameter
+        /// </summary>
+        /// <param name="parameters">navigation parameter</param>
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             Title = parameters.GetValue<string>("title").ToUpper();

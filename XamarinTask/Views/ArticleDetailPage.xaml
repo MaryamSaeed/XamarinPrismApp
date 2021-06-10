@@ -5,13 +5,7 @@
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="XamarinTask.Views.ArticleDetailPage"
             Title="{Binding Title}">
-    <!--<StackLayout x:Name="ArticleContent" Margin="15" BackgroundColor="{StaticResource BackgroundColor}" >
-            <Image  Source="{Binding ImageSource}" HorizontalOptions="CenterAndExpand"/>
-            <Label Text="{Binding ArticleTitle}" FontSize="Title"  TextColor="Black" Padding="10"/>
-            <Label Text="{Binding ArticleAuther, StringFormat='By {0}'}" FontSize="Medium" Padding="10"/>
-            <Label Text="{Binding ArticleText}" FontSize="Large" Padding="10"/>
-        <Button Text="Open website" TextColor="{StaticResource BackgroundColor}" TextTransform="Uppercase" BackgroundColor="{StaticResource NavigationBarColor}"/>
-    </StackLayout>-->
+    
     <Grid  Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

@@ -7,6 +7,7 @@ namespace XamarinTask.ViewModels
     {
         //command
         public DelegateCommand<string> NavigateToPage { get; }
+        //ctor
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {

@@ -15,13 +15,13 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <RelativeLayout  >
-                    <StackLayout HorizontalOptions="Center" BackgroundColor="{StaticResource BackgroundColor}" Margin="10,10,10,10" Padding="10">
+                    <StackLayout HorizontalOptions="Center" BackgroundColor="{StaticResource BackgroundColor}" Margin="10,10,10,10">
                     <Frame Padding="0" VerticalOptions="StartAndExpand">
                         <Image Source="{Binding urlToImage}" Aspect="AspectFit"/>
                     </Frame>
-                        <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}"/>
-                        <Label Text="{Binding author,StringFormat='By {0}'}" FontSize="Medium" />
-                        <Label Text="{Binding publishedAt,StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" HorizontalTextAlignment="End"/>
+                        <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}" Padding="10,0,0,0"/>
+                        <Label Text="{Binding author,StringFormat='By {0}'}" FontSize="Medium" Padding="10,0,0,0"/>
+                        <Label Text="{Binding publishedAt,StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" HorizontalTextAlignment="End" Padding="0,0,10,10"/>
                     </StackLayout>
                 </RelativeLayout>
             </DataTemplate>
