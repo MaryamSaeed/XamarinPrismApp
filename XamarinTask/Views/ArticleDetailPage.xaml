@@ -26,7 +26,7 @@
             <Image Source="{Binding ImageSource}" HorizontalOptions="CenterAndExpand" />
             <Label Text="{Binding ArticleTitle}" FontSize="Title"  TextColor="{StaticResource NameTextColor}" Padding="20,0,0,0" />
             <Label Text="{Binding ArticleAuther, StringFormat='By {0}'}" FontSize="Medium"  Padding="20,0,0,0" />
-            <Label Text="{Binding ArticleText}" FontSize="Large" Padding="20,20,0,0" MaxLines="8"/>
+            <Label Text="{Binding ArticleText}" FontSize="Large" Padding="20,20,0,0" MaxLines="8" BackgroundColor="{StaticResource BackgroundColor}"/>
         </StackLayout>
         <Button Text="Open website" TextColor="{StaticResource BackgroundColor}" TextTransform="Uppercase" BackgroundColor="{StaticResource NavigationBarColor}" Grid.Row="3"
                  VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>

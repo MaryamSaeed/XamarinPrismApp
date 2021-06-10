@@ -10,7 +10,7 @@
         <Color x:Key="DimmedColor" >lightgray</Color>
         <Color x:Key="DimmedTextColor" >Dimgray</Color>
         <Color x:Key="NameTextColor" >Black</Color>
-        <Color x:Key="NavigationBarColor" >Black</Color>
+        <Color x:Key="NavigationBarColor">Black</Color>
       <!--Styles-->
         <Style TargetType="{x:Type NavigationPage}">
             <Setter Property="BarBackgroundColor"
@@ -25,6 +25,7 @@
             <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}" />
             <Setter Property="TextColor" Value="{StaticResource NameTextColor}" />
             <Setter Property="TextTransform" Value="None" />
+            <Setter Property="HorizontalOptions" Value="Start"/>
         </Style>
         
     </Application.Resources>
