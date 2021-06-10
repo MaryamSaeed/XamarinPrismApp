@@ -5,11 +5,30 @@
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="XamarinTask.Views.ArticleDetailPage"
             Title="{Binding Title}">
-    <StackLayout BackgroundColor="{StaticResource BackgroundColor}" Margin="20">
-        <Image Source="{Binding ImageSource}" HorizontalOptions="CenterAndExpand"/>
-        <Label Text="{Binding ArticleText}" FontSize="Large" HorizontalOptions="CenterAndExpand"  Padding="10"/>
-
-        <Button Text="Open website" TextColor="{StaticResource BackgroundColor}" TextTransform="Uppercase" VerticalOptions="End" BackgroundColor="{StaticResource NavigationBarColor}"/>
-    </StackLayout>
-  
+    <!--<StackLayout x:Name="ArticleContent" Margin="15" BackgroundColor="{StaticResource BackgroundColor}" >
+            <Image  Source="{Binding ImageSource}" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding ArticleTitle}" FontSize="Title"  TextColor="Black" Padding="10"/>
+            <Label Text="{Binding ArticleAuther, StringFormat='By {0}'}" FontSize="Medium" Padding="10"/>
+            <Label Text="{Binding ArticleText}" FontSize="Large" Padding="10"/>
+        <Button Text="Open website" TextColor="{StaticResource BackgroundColor}" TextTransform="Uppercase" BackgroundColor="{StaticResource NavigationBarColor}"/>
+    </StackLayout>-->
+    <Grid  Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.RowSpan="3" BackgroundColor="{StaticResource BackgroundColor}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+            <Image Source="{Binding ImageSource}" HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding ArticleTitle}" FontSize="Title"  TextColor="{StaticResource NameTextColor}" Padding="20,0,0,0" />
+            <Label Text="{Binding ArticleAuther, StringFormat='By {0}'}" FontSize="Medium"  Padding="20,0,0,0" />
+            <Label Text="{Binding ArticleText}" FontSize="Large" Padding="20,20,0,0" MaxLines="8"/>
+        </StackLayout>
+        <Button Text="Open website" TextColor="{StaticResource BackgroundColor}" TextTransform="Uppercase" BackgroundColor="{StaticResource NavigationBarColor}" Grid.Row="3"
+                 VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"/>
+    </Grid>
 </ContentPage>

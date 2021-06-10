@@ -14,6 +14,9 @@ namespace XamarinTask.ViewModels
         //private
         private string title;
         private string articleText;
+        private string articleTitle;
+        private string imageSource;
+        private string articleAuther;
         //public
         public string Title
         {
@@ -25,11 +28,20 @@ namespace XamarinTask.ViewModels
             get { return articleText; }
             set { SetProperty(ref articleText, value); }
         }
-        private string imageSource;
         public string ImageSource
         {
             get { return imageSource; }
             set { SetProperty(ref imageSource, value); }
+        }
+        public string ArticleTitle
+        {
+            get { return articleTitle; }
+            set { SetProperty(ref articleTitle, value); }
+        }
+        public string ArticleAuther
+        {
+            get { return articleAuther; }
+            set { SetProperty(ref articleAuther, value); }
         }
         //ctor
         public ArticleDetaiPageViewModel()
@@ -42,10 +54,15 @@ namespace XamarinTask.ViewModels
         {
             
         }
-
+        /// <summary>
+        /// displays the content of the article sent in the navigation parameter
+        /// </summary>
+        /// <param name="parameters"></param>
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             var selectedarticle = parameters.GetValue<Article>(Constants.selectedArticle);
+            ArticleTitle = selectedarticle.title;
+            ArticleAuther = selectedarticle.author;
             ArticleText = selectedarticle.description;
             ImageSource = selectedarticle.urlToImage;
         }

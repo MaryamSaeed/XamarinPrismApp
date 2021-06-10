@@ -6,6 +6,7 @@ namespace XamarinTask
 {
     static partial class WebConstants
     {
-        public static string ArticlesUrl = "https://newsapi.org/v1/articles?source=the-next-web&apiKey=533af958594143758318137469b41ba9";
+        private static string apiKey = "56bff2fcbc554686962801c22a9baee8";
+        public static string ArticlesUrl = "https://newsapi.org/v1/articles?source=the-next-web&apiKey="+apiKey;
     }
 }

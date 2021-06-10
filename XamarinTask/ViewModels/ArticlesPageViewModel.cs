@@ -6,6 +6,7 @@ using Prism.Services;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -45,7 +46,7 @@ namespace XamarinTask.ViewModels
             ItemSelectedChanged = new DelegateCommand(OnItemSelectedChanged);
         }
         /// <summary>
-        /// swhn an item gets selected from the articles list
+        /// when an item gets selected from the articles list
         /// navigat to article detail page
         /// </summary>
         private void OnItemSelectedChanged()
@@ -59,12 +60,14 @@ namespace XamarinTask.ViewModels
         {
             
         }
-
+       
         public void OnNavigatedTo(INavigationParameters parameters)
         {
             GetArticlesWebRequest();
         }
-
+        /// <summary>
+        /// initiates the API calls and get its the articles list
+        /// </summary>
         private async void GetArticlesWebRequest()
         {
             HttpResponseMessage requestcontent = await client.GetAsync(WebConstants.ArticlesUrl);
