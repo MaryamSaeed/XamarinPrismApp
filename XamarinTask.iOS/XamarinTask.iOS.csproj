@@ -211,5 +211,20 @@
       <Name>XamarinTask</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\explore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\live.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\onlineNews.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wishlist.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
