@@ -3,10 +3,9 @@ using Prism.Navigation;
 
 namespace XamarinTask.ViewModels
 {
-    public class EmptyPageViewModel : BindableBase, INavigationAware
+    public class EmptyPageViewModel : ViewModelBase
     {
         //private
-        private string title;
         private string screenmessage;
         private INavigationService navigationService;
         //public
@@ -15,13 +14,9 @@ namespace XamarinTask.ViewModels
             get { return screenmessage; }
             set { SetProperty(ref screenmessage, value); }
         }
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
         //ctor
         public EmptyPageViewModel(INavigationService navigationservice)
+            :base(navigationservice)
         {
             Title = "Empty Page Title";
             navigationService = navigationservice;
@@ -30,7 +25,7 @@ namespace XamarinTask.ViewModels
         /// desplays a title and a screen message based on the navigation parameter
         /// </summary>
         /// <param name="parameters">navigation parameter</param>
-        public void OnNavigatedTo(INavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             Title = parameters.GetValue<string>("title").ToUpper();
             var status = parameters.GetValue<bool>("status");
@@ -38,11 +33,6 @@ namespace XamarinTask.ViewModels
                 ScreenMessage = Constants.NoService;
             else
                 ScreenMessage = Constants.NoItems;
-        }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-
         }
     }
 }

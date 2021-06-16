@@ -6,24 +6,18 @@ using Prism.Services;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using XamarinTask.WebService;
+using XamarinTask.Model;
 
 namespace XamarinTask.ViewModels
 {
-    public class ArticlesPageViewModel : BindableBase,INavigationAware
+    public class ArticlesPageViewModel : ViewModelBase
     {
         //private
-        private string title;
         private HttpClient client;
         private List<Article> articles;
         private INavigationService navigationService;
         private IPageDialogService dialogService;
         //public
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
         public List<Article> Articles
         {
             get { return articles; }
@@ -33,6 +27,7 @@ namespace XamarinTask.ViewModels
         public Article SelectdArticle { get; set; }
         //ctor
         public ArticlesPageViewModel(INavigationService navigationservice,IPageDialogService dialogservice)
+            :base(navigationservice)
         {
             Title = "Articles".ToUpper();
             client = new HttpClient();
@@ -53,12 +48,8 @@ namespace XamarinTask.ViewModels
             };
             navigationService.NavigateAsync("ArticleDetailPage",parameters);
         }
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            
-        }
-       
-        public void OnNavigatedTo(INavigationParameters parameters)
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             GetArticlesWebRequest();
         }

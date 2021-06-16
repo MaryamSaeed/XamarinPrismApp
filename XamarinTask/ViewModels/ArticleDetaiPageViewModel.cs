@@ -5,11 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
-using XamarinTask.WebService;
+using XamarinTask.Model;
 
 namespace XamarinTask.ViewModels
 {
-    public class ArticleDetaiPageViewModel : BindableBase,INavigationAware 
+    public class ArticleDetaiPageViewModel : ViewModelBase 
     {
         //private
         private string title;
@@ -44,21 +44,17 @@ namespace XamarinTask.ViewModels
             set { SetProperty(ref articleAuther, value); }
         }
         //ctor
-        public ArticleDetaiPageViewModel()
+        public ArticleDetaiPageViewModel(INavigationService navigationService)
+            :base(navigationService)
         {
             Title = "Article Details".ToUpper();
 
         }
-
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            
-        }
         /// <summary>
         /// displays the content of the article sent in the navigation parameter
         /// </summary>
-        /// <param name="parameters">naveration parametrs with the article</param>
-        public void OnNavigatedTo(INavigationParameters parameters)
+        /// <param name="parameters">navegation parametrs with the article</param>
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             var selectedarticle = parameters.GetValue<Article>(Constants.selectedArticle);
             ArticleTitle = selectedarticle.title;
