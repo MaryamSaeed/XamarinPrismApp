@@ -7,7 +7,6 @@ namespace XamarinTask.ViewModels
     {
         //private
         private string screenmessage;
-        private INavigationService navigationService;
         //public
         public string ScreenMessage
         {
@@ -19,7 +18,6 @@ namespace XamarinTask.ViewModels
             :base(navigationservice)
         {
             Title = "Empty Page Title";
-            navigationService = navigationservice;
         }
         /// <summary>
         /// desplays a title and a screen message based on the navigation parameter

@@ -8,16 +8,14 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Name ="Search Icon" IconImageSource="search.png"/>
     </ContentPage.ToolbarItems>
-    <CollectionView ItemsSource="{Binding Articles}" ItemsLayout="VerticalList" 
+    <CollectionView ItemsSource="{Binding Articles}" 
         SelectionMode="Single" 
         SelectedItem="{Binding SelectdArticle }"
         SelectionChangedCommand="{Binding ItemSelectedChanged}" >
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <StackLayout HorizontalOptions="Center" BackgroundColor="{StaticResource BackgroundColor}" Margin="10,10,10,10">
-                    <Frame Padding="0" VerticalOptions="StartAndExpand">
-                        <Image Source="{Binding urlToImage}" Aspect="AspectFit"/>
-                    </Frame>
+                <StackLayout HorizontalOptions="Center"  Padding="10" Margin="10">
+                    <Image Source="{Binding urlToImage}" Aspect="AspectFit"/>
                     <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}" Padding="10,0,0,0"/>
                     <Label Text="{Binding author,StringFormat='By {0}'}" FontSize="Medium" Padding="10,0,0,0"/>
                     <Label Text="{Binding publishedAt,StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" HorizontalTextAlignment="End" Padding="0,0,10,10"/>

@@ -7,16 +7,21 @@ namespace XamarinTask.ViewModels
     {
         //command
         public DelegateCommand<string> NavigateToPage { get; }
+        public DelegateCommand NavigateToArticles { get;}
+        public DelegateCommand NavigateToGallery { get;}
+        public DelegateCommand NavigateToWishList { get;}
+        public DelegateCommand NavigateToLiveChat { get;}
+        public DelegateCommand NavigateToExploreNews { get;}
         //ctor
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Main Page";
-            NavigateToPage = new DelegateCommand<string>(OnNavigateToPage);
+            InitCommand();
         }
-        private async void OnNavigateToPage(string pagepath)
-        {
-            await NavigationService.NavigateAsync($"NavigationPage/{pagepath}");
+        private void InitCommand()
+        { 
+            
         }
     }
 }

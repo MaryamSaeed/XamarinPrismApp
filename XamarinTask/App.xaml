@@ -27,6 +27,5 @@
             <Setter Property="TextTransform" Value="None" />
             <Setter Property="HorizontalOptions" Value="Start"/>
         </Style>
-        
     </Application.Resources>
 </prism:PrismApplication>

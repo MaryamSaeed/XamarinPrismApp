@@ -12,17 +12,11 @@ namespace XamarinTask.ViewModels
     public class ArticleDetaiPageViewModel : ViewModelBase 
     {
         //private
-        private string title;
         private string articleText;
         private string articleTitle;
         private string imageSource;
         private string articleAuther;
         //public
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
         public string ArticleText
         {
             get { return articleText; }
