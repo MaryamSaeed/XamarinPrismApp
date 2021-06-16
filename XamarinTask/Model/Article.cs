@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace XamarinTask.WebService
+namespace XamarinTask.Model
 {
     [Serializable]
     public class Article

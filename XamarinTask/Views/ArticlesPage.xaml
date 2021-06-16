@@ -14,7 +14,7 @@
         SelectionChangedCommand="{Binding ItemSelectedChanged}" >
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <RelativeLayout  >
+                <AbsoluteLayout>
                     <StackLayout HorizontalOptions="Center" BackgroundColor="{StaticResource BackgroundColor}" Margin="10,10,10,10">
                     <Frame Padding="0" VerticalOptions="StartAndExpand">
                         <Image Source="{Binding urlToImage}" Aspect="AspectFit"/>
@@ -23,7 +23,7 @@
                         <Label Text="{Binding author,StringFormat='By {0}'}" FontSize="Medium" Padding="10,0,0,0"/>
                         <Label Text="{Binding publishedAt,StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" HorizontalTextAlignment="End" Padding="0,0,10,10"/>
                     </StackLayout>
-                </RelativeLayout>
+                </AbsoluteLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
