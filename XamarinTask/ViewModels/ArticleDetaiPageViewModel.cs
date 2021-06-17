@@ -1,9 +1,12 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using Prism.Services;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using XamarinTask.Model;
 
@@ -16,6 +19,8 @@ namespace XamarinTask.ViewModels
         private string articleTitle;
         private string imageSource;
         private string articleAuther;
+        private string url;
+        private IPageDialogService dialogService;
         //public
         public string ArticleText
         {
@@ -37,23 +42,37 @@ namespace XamarinTask.ViewModels
             get { return articleAuther; }
             set { SetProperty(ref articleAuther, value); }
         }
+        public DelegateCommand OpenWebsite { get; set; }
         //ctor
-        public ArticleDetaiPageViewModel(INavigationService navigationService)
+        public ArticleDetaiPageViewModel(INavigationService navigationService, IPageDialogService dialogservice)
             :base(navigationService)
         {
-          
+            OpenWebsite = new DelegateCommand(OnOpenWebsite);
+            dialogService = dialogservice;
         }
         /// <summary>
         /// displays the content of the article sent in the navigation parameter
         /// </summary>
         /// <param name="parameters">navegation parametrs with the article</param>
-        public override void OnNavigatedTo(INavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters )
         {
             var selectedarticle = parameters.GetValue<Article>(Constants.selectedArticleKey);
             ArticleTitle = selectedarticle.title;
             ArticleAuther = selectedarticle.author;
             ArticleText = selectedarticle.description;
             ImageSource = selectedarticle.urlToImage;
+            url = selectedarticle.url;
+        }
+        private async void OnOpenWebsite()
+        {
+            try
+            {
+                await Browser.OpenAsync(url, BrowserLaunchMode.SystemPreferred);
+            }
+            catch 
+            {
+                await dialogService.DisplayAlertAsync("Alert", "Somthing went wrong, please try again later", "OK");
+            }
         }
     }
 }

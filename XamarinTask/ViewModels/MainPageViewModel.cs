@@ -31,7 +31,10 @@ namespace XamarinTask.ViewModels
         }
         private void OnNavigateToArticles()
         {
-            NavigateToArticlesPage(Constants.ArticlesPage, Constants.ArticlesPageTitle);
+            var navparameters = new NavigationParameters {
+                {Constants.TitleKey,Constants.ArticlesPageTitle }
+            };
+            navigationService.NavigateAsync("NavigationPage/" + Constants.ArticlesPage,navparameters);
         }
         private void OnNavigateToGallery()
         {
@@ -48,18 +51,6 @@ namespace XamarinTask.ViewModels
         private void OnNavigateToExploreNews()
         {
             NavigateToEmptyPage(Constants.OnlineNewsPageTitle, true);
-        }
-        /// <summary>
-        /// navigat to a page and passes the page title as a navigation parameter
-        /// </summary>
-        /// <param name="pagename">the name of required page</param>
-        /// <param name="titlevalue">the title pf the page it self</param>
-        private void NavigateToArticlesPage(string pagename, string titlevalue)
-        {
-            //var navparameters = new NavigationParameters {
-            //    {Constants.TitleKey,titlevalue }
-            //};
-            navigationService.NavigateAsync("NavigationPage/"+pagename);
         }
         /// <summary>
         /// navigating to an ampty page witha title and status
