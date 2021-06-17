@@ -28,8 +28,7 @@ namespace XamarinTask.ViewModels
         //ctor
         public ArticlesPageViewModel(INavigationService navigationservice,IPageDialogService dialogservice)
             :base(navigationservice)
-        {
-            Title = "Articles".ToUpper();
+        { 
             client = new HttpClient();
             client.Timeout = TimeSpan.FromSeconds(5);
             navigationService = navigationservice;
@@ -44,13 +43,14 @@ namespace XamarinTask.ViewModels
         private void OnItemSelectedChanged()
         {
             var parameters = new NavigationParameters {
-                { Constants.selectedArticle,SelectdArticle}
+                { Constants.selectedArticleKey,SelectdArticle}
             };
-            navigationService.NavigateAsync("ArticleDetailPage",parameters);
+            navigationService.NavigateAsync(Constants.ArticlesDetailsPage,parameters);
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
+            Title = parameters.GetValue<string>(Constants.TitleKey).ToUpper();
             GetArticlesWebRequest();
         }
         /// <summary>

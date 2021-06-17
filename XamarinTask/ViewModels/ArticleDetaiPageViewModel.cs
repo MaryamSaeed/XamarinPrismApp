@@ -41,8 +41,7 @@ namespace XamarinTask.ViewModels
         public ArticleDetaiPageViewModel(INavigationService navigationService)
             :base(navigationService)
         {
-            Title = "Article Details".ToUpper();
-
+          
         }
         /// <summary>
         /// displays the content of the article sent in the navigation parameter
@@ -50,7 +49,7 @@ namespace XamarinTask.ViewModels
         /// <param name="parameters">navegation parametrs with the article</param>
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
-            var selectedarticle = parameters.GetValue<Article>(Constants.selectedArticle);
+            var selectedarticle = parameters.GetValue<Article>(Constants.selectedArticleKey);
             ArticleTitle = selectedarticle.title;
             ArticleAuther = selectedarticle.author;
             ArticleText = selectedarticle.description;

@@ -18,7 +18,7 @@ namespace XamarinTask
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            await NavigationService.NavigateAsync("MainPage/NavigationPage/Articles");
+            await NavigationService.NavigateAsync("MainPage/NavigationPage/Articles?title=Articles");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
