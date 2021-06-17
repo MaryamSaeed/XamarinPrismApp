@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                xmlns:local="clr-namespace:XamarinTask.Views"
-                  x:Class="XamarinTask.Views.MainPage"
-                Title="{Binding Title}">
+             xmlns:local="clr-namespace:XamarinTask.Views"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="XamarinTask.Views.MainPage"
+             Title="{Binding Title}"
+             ios:Page.UseSafeArea="true">
 
     <MasterDetailPage.Master>
         <ContentPage Title="Menu"
@@ -29,7 +31,7 @@
                 IsClippedToBounds="True"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
-                <Image Source="profile.png" Aspect="AspectFill"  Margin="-20"  HeightRequest="80" WidthRequest="80" />
+                    <Image Source="profile.png" Aspect="AspectFill"  Margin="-20"  HeightRequest="80" WidthRequest="80" />
                 </Frame>
                 <Label Text="Welcome" FontSize="Small" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="End"/>
                 <Label Text="Tony Roshdy" FontSize="Large" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Start" TextColor="{StaticResource NameTextColor}"/>

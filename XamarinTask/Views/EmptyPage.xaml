@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XamarinTask.Views.EmptyPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             ios:Page.UseSafeArea="true">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name ="Search Icon" IconImageSource="search.png"/>
     </ContentPage.ToolbarItems>
