@@ -10,8 +10,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Name ="Search Icon" IconImageSource="search.png"/>
     </ContentPage.ToolbarItems>
-    <StackLayout>
-        <Label Text="{Binding ScreenMessage}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+    <StackLayout  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20">
+        <Label Text="{Binding ScreenMessage}" HorizontalTextAlignment="Center"
             TextColor="{StaticResource DimmedTextColor}" FontSize="Title"/>
     </StackLayout>
 </ContentPage>
