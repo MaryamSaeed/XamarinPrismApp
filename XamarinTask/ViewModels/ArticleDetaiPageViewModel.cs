@@ -42,6 +42,12 @@ namespace XamarinTask.ViewModels
             get { return articleAuther; }
             set { SetProperty(ref articleAuther, value); }
         }
+        private DateTime publishedAt;
+        public DateTime PublishedAt
+        {
+            get { return publishedAt; }
+            set { SetProperty(ref publishedAt, value); }
+        }
         public DelegateCommand OpenWebsite { get; set; }
         //ctor
         public ArticleDetaiPageViewModel(INavigationService navigationService, IPageDialogService dialogservice)
@@ -61,6 +67,7 @@ namespace XamarinTask.ViewModels
             ArticleAuther = selectedarticle.author;
             ArticleText = selectedarticle.description;
             ImageSource = selectedarticle.urlToImage;
+            PublishedAt = selectedarticle.publishedAt;
             url = selectedarticle.url;
         }
         private async void OnOpenWebsite()
