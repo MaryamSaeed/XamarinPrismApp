@@ -11,23 +11,54 @@
         <ContentPage Title="Menu"
             Padding="0,20,0,0"
             IconImageSource="{OnPlatform iOS='hamburger.png'}" BackgroundColor="{StaticResource BackgroundColor}">
-            <Grid HorizontalOptions="Center" VerticalOptions="CenterAndExpand" BackgroundColor="{StaticResource BackgroundColor}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".5*"/>
-                    <ColumnDefinition Width=".5*"/>
-                </Grid.ColumnDefinitions>
-                <Frame Margin="10" BorderColor="{StaticResource BackgroundColor}"  CornerRadius="50" HeightRequest="60"  WidthRequest="60"
+            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" >
+                <Grid RowDefinitions="*,*" ColumnDefinitions="*,*"  Margin="50">
+                    <Frame Margin="10" BorderColor="{StaticResource BackgroundColor}"  CornerRadius="50" HeightRequest="60"  WidthRequest="60"
+                    IsClippedToBounds="True"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                        <Image Source="profile.png" Aspect="AspectFill"  Margin="-20"  HeightRequest="80" WidthRequest="80" />
+                    </Frame>
+                    <Label Text="Welcome" FontSize="Small" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="End" HorizontalOptions="Start"/>
+                    <Label Text="Tony Roshdy" FontSize="Large" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" VerticalTextAlignment="Start" TextColor="{StaticResource NameTextColor}"/>
+                </Grid>
+                <Grid RowDefinitions=".5*" ColumnDefinitions="*" Margin="10">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToArticles}"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="explore.png" HeightRequest="30" WidthRequest="30"  Grid.Column="0" />
+                    <Label Text="Articles" TextColor="Black"  Grid.Column="1"  FontSize="Large"/>
+                </Grid>
+                <Grid  RowDefinitions=".5*" ColumnDefinitions="*" Margin="10">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToLiveChat}"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="live.png" HeightRequest="30" WidthRequest="30"  Grid.Column="0" />
+                    <Label Text="Live Chat" TextColor="Black"  Grid.Column="1"  FontSize="Large" />
+                </Grid>
+                <Grid  RowDefinitions=".5*" ColumnDefinitions="*" Margin="10">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer  Command="{Binding NavigateToGallery}"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="gallery.png" HeightRequest="30" WidthRequest="30"  Grid.Column="0"/>
+                    <Label Text="Gallery" TextColor="Black"  Grid.Column="1"  FontSize="Large" />
+                </Grid>
+                <Grid  RowDefinitions=".5*" ColumnDefinitions="*" Margin="10">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToWishList}"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="wishlist.png" HeightRequest="30" WidthRequest="30"  Grid.Column="0" />
+                    <Label Text="Wish List" TextColor="Black"  Grid.Column="1" FontSize="Large" />
+                </Grid>
+                <Grid  RowDefinitions=".5*" ColumnDefinitions="*" Margin="10">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToExploreNews}"/>
+                    </Grid.GestureRecognizers>
+                    <Image Source="onlineNews.png" HeightRequest="30" WidthRequest="30"  Grid.Column="0" />
+                    <Label Text="Explore Online News" TextColor="Black"  Grid.Column="1" FontSize="Large"/>
+                </Grid>
+            </StackLayout>
+            <!--<Frame Margin="10" BorderColor="{StaticResource BackgroundColor}"  CornerRadius="50" HeightRequest="60"  WidthRequest="60"
                 IsClippedToBounds="True"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"  Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
@@ -39,8 +70,7 @@
                 <Button ImageSource="live.png" Text="Live Chat"  Grid.Row="3" Grid.ColumnSpan="2" Command="{Binding NavigateToLiveChat}" />
                 <Button ImageSource="gallery.png" Text="Gallery" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding NavigateToGallery}"/>
                 <Button ImageSource="wishlist.png" Text="Wish List"  Grid.Row="5" Grid.ColumnSpan="2" Command="{Binding NavigateToWishList}" />
-                <Button ImageSource="onlineNews.png" Text="Explore Online News" Grid.Row="6"  Grid.ColumnSpan="2" Command="{Binding NavigateToExploreNews}"/>
-            </Grid>
+                <Button ImageSource="onlineNews.png" Text="Explore Online News" Grid.Row="6"  Grid.ColumnSpan="2" Command="{Binding NavigateToExploreNews}"/>-->
         </ContentPage>
     </MasterDetailPage.Master>
 </MasterDetailPage>
