@@ -19,7 +19,7 @@
                 <Frame BackgroundColor="{StaticResource DimmedColor}" Padding="20,20,20,0">
                     <StackLayout HorizontalOptions="Center" BackgroundColor="{StaticResource BackgroundColor}">
                         <Image Source="{Binding urlToImage}" Aspect="AspectFit"/>
-                        <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}" Padding="10,0,0,0"/>
+                        <Label Text="{Binding title}" FontSize="Title" TextColor="{StaticResource NameTextColor}" Padding="10,0"/>
                         <Label Text="{Binding author,StringFormat='By {0}'}" FontSize="Medium" Padding="10,0,0,0"/>
                         <Label Text="{Binding publishedAt,StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" HorizontalTextAlignment="End" Padding="0,0,10,10"/>
                     </StackLayout>
