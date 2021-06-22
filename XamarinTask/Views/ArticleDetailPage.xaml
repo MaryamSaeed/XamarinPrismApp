@@ -7,7 +7,9 @@
             x:Class="XamarinTask.Views.ArticleDetailPage"
             Title="{Binding Title}"
             ios:Page.UseSafeArea="true">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name ="Search Icon" IconImageSource="search.png"/>
+    </ContentPage.ToolbarItems>
     <Grid Margin="15">
         <Grid.RowDefinitions>
             <RowDefinition Height=".8*"/>
