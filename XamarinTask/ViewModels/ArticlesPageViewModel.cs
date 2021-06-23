@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using XamarinTask.Model;
-
+using XamarinTask.Services;
 namespace XamarinTask.ViewModels
 {
     public class ArticlesPageViewModel : ViewModelBase
@@ -51,24 +51,23 @@ namespace XamarinTask.ViewModels
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             Title = parameters.GetValue<string>(Constants.TitleKey).ToUpper();
-            GetArticlesWebRequest();
+            GetArticlesList();
         }
         /// <summary>
         /// initiates the API calls and get its the articles list
         /// if request failed desplay ana alert message
         /// </summary>
-        private async void GetArticlesWebRequest()
+        private async void GetArticlesList()
         {
-            HttpResponseMessage requestcontent = await client.GetAsync(WebConstants.ArticlesUrl);
-            if (requestcontent.IsSuccessStatusCode)
+            string content = await HttpService.Instance.SendHttpWebRequest(WebConstants.ArticlesUrl);
+            if (string.IsNullOrEmpty(content))
             {
-                string content = await requestcontent.Content.ReadAsStringAsync();
-                Root root = JsonConvert.DeserializeObject<Root>(content);
-                Articles = root.articles;
+                await dialogService.DisplayAlertAsync("Alert", "Somthing went wrong, please try again later", "OK");
             }
             else
             {
-                await dialogService.DisplayAlertAsync("Alert", "Somthing went wrong, please try again later", "OK");
+                Root root = JsonConvert.DeserializeObject<Root>(content);
+                Articles = root.articles;
             }
         }
     }
