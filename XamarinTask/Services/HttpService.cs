@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace XamarinTask.Services
 {
-
     class HttpService
     {
         //private 
@@ -26,8 +25,9 @@ namespace XamarinTask.Services
         private HttpService()
         {
             httpClient = new HttpClient();
+            httpClient.Timeout = TimeSpan.FromSeconds(5);
         }
-        public async Task<string> SendHttpWebRequest(string url)
+        public async Task<string> SendHttpRequest(string url)
         {
             string jsontext = null;
             try
