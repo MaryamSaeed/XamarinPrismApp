@@ -29,6 +29,8 @@ namespace XamarinTask
             containerRegistry.RegisterForNavigation<Articles, ArticlesPageViewModel>();
             containerRegistry.RegisterForNavigation<EmptyPage, EmptyPageViewModel>();
             containerRegistry.RegisterForNavigation<ArticleDetailPage, ArticleDetaiPageViewModel>();
+            //ToDo: regestration of HTTP service and its interface
+            //ToDo: regestration of Articles service and its interface
         }
     }
 }
