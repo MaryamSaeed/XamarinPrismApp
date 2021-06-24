@@ -16,7 +16,7 @@ namespace XamarinTask.ViewModels
         private List<Article> articles;
         private INavigationService navigationService;
         private IPageDialogService dialogService;
-        private ArticlesRestService articlesService;
+        private ArticlesService articlesService;
         //public
         public List<Article> Articles
         {
@@ -32,7 +32,7 @@ namespace XamarinTask.ViewModels
             navigationService = navigationservice;
             dialogService = dialogservice;
             ItemSelectedChanged = new DelegateCommand(OnItemSelectedChanged);
-            articlesService = new ArticlesRestService();
+            articlesService = new ArticlesService();
         }
         /// <summary>
         /// when an item gets selected from the articles list
@@ -46,7 +46,6 @@ namespace XamarinTask.ViewModels
             };
             navigationService.NavigateAsync(Constants.ArticlesDetailsPage, parameters);
         }
-
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             Title = parameters.GetValue<string>(Constants.TitleKey).ToUpper();
