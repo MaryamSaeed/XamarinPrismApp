@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XamarinTask.Controls.CustomeButton">
+             x:Class="XamarinTask.Controls.CustomeButton"
+             x:Name="this">
   <ContentView.Content>
         <Grid>
             <Grid RowDefinitions=".5*" ColumnDefinitions="Auto,*" Margin="30,10">
-                <Grid.GestureRecognizers>
+                <!--<Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ButtonCommand}"/>
-                </Grid.GestureRecognizers>
-                <Image Source="{Binding ButtonImageSource}" HeightRequest="30" WidthRequest="30"  Grid.Column="0" />
-                <Label Text="{Binding ButtonText}" TextColor="Black"  Grid.Column="1"  FontSize="Medium" Margin="10"/>
+                </Grid.GestureRecognizers>-->
+                <Image Source="{Binding ButtonImageSource,Source={x:Reference this}}" HeightRequest="30" WidthRequest="30"  Grid.Column="0" />
+                <Label Text="{Binding ButtonText,Source={x:Reference this}}" TextColor="Black"  Grid.Column="1"  FontSize="Medium" Margin="10"/>
             </Grid>
         </Grid>
   </ContentView.Content>

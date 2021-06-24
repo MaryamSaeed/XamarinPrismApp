@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:XamarinTask.Views"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:Class="XamarinTask.Views.MainPage"
+             xmlns:control="clr-namespace:XamarinTask.Controls"
              Title="{Binding Title}"
              ios:Page.UseSafeArea="true">
 
@@ -21,13 +22,12 @@
                         <Label Text="Tony Roshdy" FontSize="Large" TextColor="{StaticResource NameTextColor}"/>
                     </StackLayout>
                 </Grid>
-                <Grid RowDefinitions=".5*" ColumnDefinitions="Auto,*" Margin="30,10">
-                    <Grid.GestureRecognizers>
+                <control:CustomeButton
+                ButtonImageSource="explore.png" ButtonText="Articles">
+                    <control:CustomeButton.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding NavigateToArticles}"/>
-                    </Grid.GestureRecognizers>
-                    <Image Source="explore.png" HeightRequest="30" WidthRequest="30"  Grid.Column="0" />
-                    <Label Text="Articles" TextColor="Black"  Grid.Column="1"  FontSize="Medium" Margin="10"/>
-                </Grid>
+                    </control:CustomeButton.GestureRecognizers>
+                </control:CustomeButton>
                 <Grid  RowDefinitions=".5*" ColumnDefinitions="Auto,*" Margin="30,10">
                     <Grid.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding NavigateToLiveChat}"/>
