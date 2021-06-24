@@ -7,8 +7,13 @@ using XamarinTask.Model;
 
 namespace XamarinTask.Services
 {
-    class ArticlesRestService : IRestService<Article>
+    class ArticlesService : IHttpService<Article>
     {
+        public ArticlesService()
+        {
+            //toDo: impelemnt Interface IArticle service
+            //to be registered in container
+        }
         public async Task<List<Article>> Get(string url)
         {
             string content = await HttpService.Instance.SendHttpRequest(WebConstants.ArticlesUrl);

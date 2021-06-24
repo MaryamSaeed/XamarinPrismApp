@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace XamarinTask.Services
 {
-    interface IRestService<T>
+    interface IHttpService<T>
     {
         Task<List<T>> Get(string url);
     }
