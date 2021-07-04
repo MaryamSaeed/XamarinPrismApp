@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XamarinTask.Services
 {
-    class HttpService
+    class HttpService:IHttpService
     {
         //private 
         private HttpClient httpClient;
@@ -27,7 +27,7 @@ namespace XamarinTask.Services
             httpClient = new HttpClient();
             httpClient.Timeout = TimeSpan.FromSeconds(5);
         }
-        public async Task<string> SendHttpRequest(string url)
+        public async Task<string> Get(string url)
         {
             string jsontext = null;
             try
@@ -49,6 +49,8 @@ namespace XamarinTask.Services
             }
             return jsontext;
         }
+
+
         //ToDo: implement IHttpService
     }
 }

@@ -26,7 +26,7 @@ namespace XamarinTask.ViewModels
         public DelegateCommand ItemSelectedChanged { get; set; }
         public Article SelectdArticle { get; set; }
         //ctor
-        public ArticlesPageViewModel(INavigationService navigationservice, IPageDialogService dialogservice)
+        public ArticlesPageViewModel(INavigationService navigationservice, IPageDialogService dialogservice,IArticlesService articlesservice)
             : base(navigationservice)
         {
             navigationService = navigationservice;

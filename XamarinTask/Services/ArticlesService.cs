@@ -7,16 +7,15 @@ using XamarinTask.Model;
 
 namespace XamarinTask.Services
 {
-    class ArticlesService : IHttpService<Article>
+    class ArticlesService:IArticlesService
     {
         public ArticlesService()
         {
-            //toDo: impelemnt Interface IArticle service
-            //to be registered in container
+            
         }
-        public async Task<List<Article>> Get(string url)
+        public async Task<List<Article>> GetArticlesList(string url)
         {
-            string content = await HttpService.Instance.SendHttpRequest(WebConstants.ArticlesUrl);
+            string content = await HttpService.Instance.Get(WebConstants.ArticlesUrl);
             if (string.IsNullOrEmpty(content))
             {
                 return null;

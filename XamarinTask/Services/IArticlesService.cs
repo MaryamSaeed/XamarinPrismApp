@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using XamarinTask.Model;
 
 namespace XamarinTask.Services
 {
-    interface IHttpService
+    public interface IArticlesService
     {
-        Task<String> Get(string url);
+        Task<List<Article>> GetArticlesList(string url);
     }
 }
