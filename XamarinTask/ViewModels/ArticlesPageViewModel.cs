@@ -16,7 +16,7 @@ namespace XamarinTask.ViewModels
         private List<Article> articles;
         private INavigationService navigationService;
         private IPageDialogService dialogService;
-        private ArticlesService articlesService;
+        private IArticlesService articlesService;
         //public
         public List<Article> Articles
         {
@@ -31,6 +31,7 @@ namespace XamarinTask.ViewModels
         {
             navigationService = navigationservice;
             dialogService = dialogservice;
+            articlesService = articlesservice;
             ItemSelectedChanged = new DelegateCommand(OnItemSelectedChanged);
             articlesService = new ArticlesService();
         }
@@ -57,7 +58,7 @@ namespace XamarinTask.ViewModels
         /// </summary>
         private async void GetArticlesList()
         {
-            var articleslist = await articlesService.Get(WebConstants.ArticlesUrl);
+            var articleslist = await articlesService.GetArticlesList(WebConstants.ArticlesUrl);
             if (articleslist == null)
                 await dialogService.DisplayAlertAsync("Alert", "Somthing went wrong, please try again later", "OK");
             else

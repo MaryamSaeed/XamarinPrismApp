@@ -49,8 +49,5 @@ namespace XamarinTask.Services
             }
             return jsontext;
         }
-
-
-        //ToDo: implement IHttpService
     }
 }
